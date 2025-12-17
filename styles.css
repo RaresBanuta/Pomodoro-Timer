@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#background-video {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.timer-box {
+    border: 2px solid black;
+    border-radius: 2rem;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 800px;
+    background-color: #4A7C59;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    padding: 5px 10px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.timer-box.active {
+    display: flex;
+}
+
+.timer-box h1 {
+    color: #D1D5DB;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-box p {
+    color: #D1D5DB;
+    justify-content: left;
+    align-items: center;
+}
+
+.timer-box #cycles-set-btn {
+    border-radius: 0.5rem;
+    padding: 3px;
+    color: #333333;
+    border-color: #4A7C59;
+    font-size: 1rem;
+}
+
+.timer-box #cycles-set-btn:hover {
+    background-color: #daac04;
+    transition: 0.8s background-color ease-in-out;
+    font-size: 1.2rem;
+    transition: 0.4s all ease;
+}
+
+.timer-box #cycles-set-btn:not(:hover) {
+    background-color: azure;
+    font-size: 1rem;
+    transition: 0.5s all ease;
+}
+
+.timer-box #timer-settings {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.4rem;
+    padding: 7px 5px;
+}
+
+#timer-settings #cycles-set-btn {
+    align-items: center;
+    justify-content: center;
+}
+
+#cycles-select {
+    padding: 3px;
+    font-size: 0.9rem;
+    border-radius: 1rem;
+    border: 1px solid #4A7C59;
+    font-family: serif;
+    background-color: beige;
+}
+
+#length-select {
+    padding: 3px;
+    font-size: 0.9rem;
+    border-radius: 1rem;
+    border: 1px solid #4A7C59;
+    font-family: serif;
+    background-color: beige;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #0F1419;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D1D5DB;
+}
+
+/* ----TIMER SETTINGS STARTING HERE---- */
+.timing-box {
+    background-color: #4A7C59;
+    font-family: Impact, serif;
+    color: antiquewhite;
+    font-size: 1.7rem;
+    display: none;
+    flex-direction: column;
+    border: 5px solid #4A7C59;
+    border-radius: 2rem;
+    padding: 0.9rem;
+}
+
+.timing-box.active {
+    display: flex;
+}
+
+#timer {
+    padding: 10px 8px;
+}
+
+#timer-display {
+    font-size: 4.6rem;
+    font-weight: bold;
+    color: #D1D5DB;
+    text-align: center;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+#timer h1 {
+    font-family: sans-serif;
+}
+
+#cycle-number {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#cycle-number p {
+    align-self: center;
+    text-align: right;
+    font-size: 1.3rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#cycle-number #stop-btn {
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: antiquewhite;
+    border: 3px solid #4A7C59;
+    border-radius: 12px;
+    padding: 2px 5px;
+    transition: 0.3s background-color ease-out;
+}
+
+#cycle-number #stop-btn:hover {
+    background-color: crimson;
+    transition: 0.3s background-color ease-in-out;
+}
+
+.end-timer {
+    border: 5px solid #4A7C59;
+    border-radius: 2rem;
+    /* change it to flex once you are done */
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+}
+
+.end-timer.active {
+    display: flex;
+}
+
+.end-timer p {
+    margin-top: 8px;
+    align-self: center;
+    justify-content: center;
+}
+
+.end-timer h1 {
+    align-self: center;
+    justify-content: center;
+}
+
+.end-timer #restart-btn {
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+    max-width: 50%;
+    margin-top: 8px;
+    font-size: 1.2rem;
+    background-color: antiquewhite;
+    border: 3px solid #4A7C59;
+    border-radius: 12px;
+    padding: 2px 5px;
+}
+
+.break-timer {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    border: 5px solid #4A7C59;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    border-radius: 2rem;
+    /* change it to flex once you are done */
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+}
+
+.break-timer.active {
+    display: flex;
+}
+
+.tomato {
+    position: fixed;
+    top: -50px;
+    font-size: 2.5rem;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+.timer-box,
+.timing-box,
+.end-timer {
+    transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.box-masked {
+    opacity: 0.3 !important;
+    filter: blur(2px);
+}
+
+/* also add media screen calibration for phones,tablets and laptops */
+
+@media (max-width: 500px) {
+
+    .timer-box {
+        font-size: 2rem;
+        padding: 7px 10px;
+    }
+
+    .timing-box {
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .end-timer,
+    .break-timer {
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 800px) {
+
+    .timer-box {
+        font-size: 1.3rem;
+        padding: 7px 10px;
+    }
+
+    .timing-box {
+        padding: 1.3rem;
+        font-size: 2rem;
+    }
+
+    .end-timer,
+    .break-timer {
+        padding: 1.3rem;
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="work.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="timer-box active">
+        <h1>Welcome to your own Pomodoro Timer</h1>
+        <div id="timer-settings">
+            <p>Number of Pomodoro Cycles</p>
+
+            <select id="cycles-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <p>Minutes of Break</p>
+
+            <select id="length-select">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+            <button id="cycles-set-btn">START</button>
+        </div>
+    </div>
+    <div class="timing-box">
+        <div id="timer">
+            <h1> Time remaining:</h1>
+            <div id="timer-display"><span id="minutes">1</span>:<span id="seconds">00</span></div>
+        </div>
+        <div id="cycle-number">
+            <button id="stop-btn">STOP</button>
+            <p><span id="current-cycle">1</span> of <span id="total-cycles">5</span></p>
+        </div>
+    </div>
+    <div class="end-timer">
+        <h1> Congratulations</h1>
+        <p>You have managed to stay focused for <span id="total-cycles-zurzeit"
+                style="color: #00ad34; font-size: 1.2rem;"> 4 </span>entire
+            cycles</p>
+        <p>Every session gets you one step forward towards your goals</p>
+        <button id="restart-btn">Restart Pomodoro</button>
+    </div>
+    <div class="break-timer">
+        <h1> Break Time!</h1>
+        <div id="break-timer-display"><span id="break-seconds" style="color: crimson;font-size: 1.9rem;">00</span></div>
+        <p>Relax and recharge before the next session</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
